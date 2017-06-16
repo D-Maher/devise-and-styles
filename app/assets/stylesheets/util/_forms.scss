@@ -4,6 +4,10 @@ $dk-grey: #222222;
 $placeholder-text: #595959;
 $copy-text: #FFFFFF;
 
+* {
+  transition: all .2s ease;
+}
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: $placeholder-text;
@@ -21,13 +25,71 @@ $copy-text: #FFFFFF;
   color: $placeholder-text;
 }
 
-form {
-  input {
+.devise-page-container {
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+
+  padding-top: 3rem;
+}
+
+// common practice for centering things horizontally
+.center-block {
+  display: block;
+  position: relative;
+  float: none;
+  margin: 0 auto;
+}
+
+.form-container {
+  padding: 1rem;
+  background: #333;
+  border-radius: 1rem;
+  .form-title-container {
+    color: $pink;
+  }
+}
+
+form.coder-form {
+  input:not([type='submit']) {
     background: none;
-    border-bottom: 1px solid $lt-grey !important;
+    border-bottom: 1px solid $lt-grey;
+
+    &:focus {
+      border-bottom: 1px solid $pink;
+    }
   }
 
-  input:focus {
-    border-bottom: 1px solid $pink !important;
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .submit-btn {
+      background: none;
+      padding: .5rem 1rem;
+      color: $lt-grey;
+      font-size: 1.25rem;
+      border: 2px solid $pink * 0.6;
+      border-radius: 5px;
+      margin-bottom: .5rem;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+        border: 2px solid $pink;
+      }
+    }
+
+    a {
+      color: $lt-grey;
+      font-weight: 500;
+
+      &:hover {
+        color: white;
+      }
+    }
   }
 }
